@@ -1,0 +1,22 @@
+.color-bar {
+    background-color: goldenrod;
+    padding: 1.2rem;
+    border-bottom: 0.1rem solid black;
+}
+
+.contact-info {
+    background-color: #dadada;
+    padding: 1rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    word-wrap: break-word;
+    margin: 0.5rem 0;
+}
+
+.contact-info a {
+    font-size: 1rem;
+    word-wrap: break-word;
+    text-decoration: none;
+}
