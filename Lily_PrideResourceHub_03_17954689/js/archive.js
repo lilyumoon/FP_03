@@ -10,8 +10,6 @@ const getElement = (selector) => /** @type {Element} */ (document.querySelector(
 
 
 const insertContent = () => {
-    console.log("inserting content");
-
     const container = getElement("#resources");
     archiveData.forEach(section => {
         // create collapsible container
@@ -40,11 +38,15 @@ const insertContent = () => {
             } else {
                 listItem.innerHTML += `<br><em>&nbsp;${item.format}</em>`;
             }
+
+            list.appendChild(listItem);
+
+            const details = document.createElement("div");
+            details.classList.add("collapsible-content");
+
             if (item.description) {
                 listItem.innerHTML += `<br><p>${item.description}</p>`;
             }
-
-            list.appendChild(listItem);
         });
         content.appendChild(list);
 
