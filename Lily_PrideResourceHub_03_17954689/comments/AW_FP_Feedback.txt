@@ -1,4 +1,93 @@
 --------------------------------------------------
+FP_03
+--------------------------------------------------
+
+Time on this part: 4-5 hours
+
+Total for the project: 12-15 hours
+
+
+Questions:
+------------------------
+
+Are you pleased with your progress so far?
+
+	I think so. I like the flatpickr calendar. I wish I had API access to the den.
+
+
+Is there anything you need from me?
+
+	I'm good for now!
+
+
+
+------------------------------------------------
+Feedback/Fixes:
+------------------------------------------------
+
+Rene:
+------------------------
+
+Lily, great news. With the help of another student, Ashley Sluiter, we got your code to fully run in my project. The issue was that I use a workspace. The solution was the use of the base tag. With use of the base tag, some changes needed to be done to your hrefs. Here are two references for base:
+
+
+
+https://www.w3schools.com/tags/tag_base.asp
+
+
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+
+
+I attached your project so you can see were base was added. Basically, we added base to all your html files, however the top-level index file is different than the ones in a subfolder. There also needed to be changes to the data files in your JS.
+
+
+
+If you have questions, please contact me. This should fully work in your project, but I would extract the contents into your usual environment and try it out. I ran your project using Live Server.
+
+
+
+UseBase.zip
+
+
+
+
+*******************************************
+
+Lily, I have trouble running your project even when using the Go Live Server extension.
+
+Here are the changes I made to get it to run using Go Live Server extension:
+
+The image on your top-level index.html page is broken unless I add a dot before you leading slash.
+
+In load_components.js, I removed one of the dots on lines 6 and 7.
+
+In the header/footer, I added one dot to the src for the images.
+
+With those changes (including use Go Live Server) your project went from 13 errors down to 6. Those errors are for the fonts in style.css. If I added dots, the number of font errors increased.
+
+I added one dot to the hrefs in header.html so I could get to those pages, but the header/footer and styles are not applied to the pages.
+
+Using learning.html as my test case, I could get the styles to work by adding two dots to there hrefs. However, load_components.js never worked from here. Depending on what I did to the script tag, this is the error I received (the ... represents the path):
+
+Refused to execute script from ... because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+
+I did some research and tried a few things, but finally needed to move on.
+
+What are you using to develop and test your project?
+
+
+Lily:
+------------------------
+
+<Most or all of this was addressed via email exchange>
+
+
+
+
+
+--------------------------------------------------
 FP 02
 --------------------------------------------------
 
