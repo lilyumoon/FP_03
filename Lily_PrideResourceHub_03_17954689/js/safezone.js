@@ -1,28 +1,5 @@
 "use strict";
 
-const events = [
-    { date: "02-21-2025", title: "Safe Zone Project Workshop", 
-        location: "Online",
-        link: "https://theden.northwoodtech.edu/event/10966286",
-        description: "This is an online Safe Zone Workshop offered to students, staff, and faculty at Northwood Tech." 
-    },
-    { date: "03-28-2025", title: "Transgender Day of Visibility Community Panel", 
-        location: "Ashland", 
-        link: "https://theden.northwoodtech.edu/event/10944607",
-        description: "Join us for our 3rd Annual Transgender Day of Visibility Community Panel!" 
-    },
-    { date: "04-04-2025", title: "Safe Zone Project Workshop", 
-        location: "AADC",
-        link: null,
-        description: "This is a Safe Zone Workshop for community members at Ashland Area Development Corporation." 
-    },
-    { date: "04-08-2025", title: "NAP Club Monthly Meeting", 
-        location: "Online & Rice Lake 212",
-        link: "https://theden.northwoodtech.edu/event/11163740",
-        description: "Join us for our monthly meeting of the Northwood Alliance of Pride Club!"
-    },
-];
-
 
 /**
  * Gets the first element descendant of node matching selector
@@ -42,7 +19,7 @@ const eventDetails = getElement("#event-details");
 const processCalendarSelection = (selectedDates, dateStr, instance) => {
     if (selectedDates.length > 0) {
         const selectedDate = instance.formatDate(selectedDates[0], "m-d-Y");
-        const event = events.find(event => event.date === selectedDate);
+        const event = EventData.find(event => event.date === selectedDate);
 
         if (event) { // If an event is found for the selected date...
             if (event.link) { // If the event has a link, show the link in the details
@@ -50,9 +27,9 @@ const processCalendarSelection = (selectedDates, dateStr, instance) => {
                     <h3>${event.title}</h3>
                     <p>&nbsp;Date: ${event.date}</p>
                     <p style="margin-bottom: 0.5rem">&nbsp;Location: ${event.location}</p>
-                    <p style="font-weight: 500">${event.description}</p>
-                    <br>
                     <a href="${event.link}" target="_blank">Event Link</a>
+                    <br><br>
+                    <p style="font-weight: 500">${event.description}</p>
                 `;
             }else { // If the event does not have a link, omit it
                 eventDetails.innerHTML = `
@@ -78,7 +55,7 @@ const buildDays = (dObj, dStr, fp, dayElem) => {
     const date = fp.formatDate(dayElem.dateObj, "m-d-Y");
 
     // Check if the date exists in the events array
-    if (events.some(event => event.date === date)) {
+    if (EventData.some(event => event.date === date)) {
         dayElem.classList.add("event-day"); // Add style to the day element
         dayElem.title = "Event available!"; // Add a tooltip
     }
@@ -96,4 +73,12 @@ document.addEventListener("DOMContentLoaded", function() {
         onChange: processCalendarSelection,
         onDayCreate: buildDays,
     });
+
+    Utility.injectHtmlAsync(
+        ".header", "includes/header.html"
+    ).then(() => {
+        Utility.initializeSlicknav("#menu", Utility.defaultSlickOps);
+    });
+    
+    Utility.injectHtmlAsync(".footer", "includes/footer.html");
 });

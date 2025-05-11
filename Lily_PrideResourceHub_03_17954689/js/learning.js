@@ -72,5 +72,13 @@ const toggleCollapsible = (categoryElement) => {
 
 
 document.addEventListener("DOMContentLoaded", function() {
+    Utility.injectHtmlAsync(
+        ".header", "includes/header.html"
+    ).then(() => {
+        Utility.initializeSlicknav("#menu", Utility.defaultSlickOps);
+    });
+    
+    Utility.injectHtmlAsync(".footer", "includes/footer.html");
+
     insertContent();
 });
