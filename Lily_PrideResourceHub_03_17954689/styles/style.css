@@ -150,6 +150,13 @@ figcaption {
     }
 }
 
+@media screen and (max-width: 770px) {
+    .title-block h1 {
+        margin: 0.5rem;
+        padding: 0.25rem;
+        font-size: 2.5rem;}
+}
+
 
 /* Fonts */
 

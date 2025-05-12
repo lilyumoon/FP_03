@@ -90,4 +90,21 @@ const archiveData = [
             },
         ]
     },
+    {
+        category: "Community Resources",
+        items: [
+            {
+                title: "Twin Ports Area LGBTQ+ Directory",
+                link: "https://duluthmn.gov/media/12381/lgbtq-directory_updated-72518.pdf",
+                description: "This directory provides a list of LGBTQ+ resources in the Twin Ports area, including support groups, healthcare providers, and community organizations. It is a valuable resource for individuals seeking support and connection within the LGBTQ+ community. Developed in collaboration with the Lutheran Social Service Together for Youth, Trans+, Northland Gay Men's Group, Northland Prism Community, Trans + Family, Friends, & Allies Group, and Northland LGBT Elders.",
+                format: "PDF",
+            },
+            {
+                title: "Chippewa Valley LGBTQ+ Community Center Resource Guide",
+                link: "https://09324572-36a3-4ab6-952f-c48017023e61.filesusr.com/ugd/94d643_a7457a8f819a4522871653e7a07b6fbe.pdf",
+                description: "This resource guide provides a comprehensive list of LGBTQ+ resources in the Chippewa Valley area. It includes information and resources in categories such as Legal Services, Medical and Mental Health Services, Social Services, and more.",
+                format: "PDF",
+            }
+        ]
+    },
 ];

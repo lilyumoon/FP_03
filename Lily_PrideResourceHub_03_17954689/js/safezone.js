@@ -81,4 +81,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     Utility.injectHtmlAsync(".footer", "includes/footer.html");
+
+    // Add event listener to all PDF links;
+    // This will force the download of PDF files on (most) mobile devices
+    const links = document.querySelectorAll('a[href$=".pdf"]');
+
+    links.forEach(link => {
+        link.addEventListener("click", (event) => {
+            // Check screen size
+            if (window.innerWidth <= 1024) { 
+                event.preventDefault(); // Prevent default behavior
+                const url = link.getAttribute("href");
+                const anchor = document.createElement("a");
+                anchor.href = url;
+                anchor.download = ""; // Force download instead of directly opening file
+                anchor.click();
+            }
+        });
+    });
 });

@@ -1,9 +1,0 @@
-TODO:
-
-    - add 1-2 more categories to Learning
-    - populate more resources
-
-- embed the Current Issues Guide as a new page
-    - add a form maybe?
-
-- remove History page
